@@ -6,7 +6,6 @@ import { projects } from '../../constants/constants';
 
 const Projects = () => {
 
-  
   return (<Section nopadding id='projects'>
   <SectionDivider />
   <SectionTitle></SectionTitle>
