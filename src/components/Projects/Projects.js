@@ -4,15 +4,20 @@ import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag,
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
 
+const prefix =  (process.env.NODE_ENV=='production'?'./':'/')
+
 const Projects = () => {
 
+  projects.forEach(project => {
+    console.log(project.image)
+  });
   return (<Section nopadding id='projects'>
   <SectionDivider />
   <SectionTitle></SectionTitle>
   <GridContainer>
     {projects.map(({id, image, title, description, tags, source, visit})  =>  (
       <BlogCard key={id}>
-        <Img src={image} alt={title} />
+        <Img src={prefix + image} alt={title} />
         <TitleContent>
           <HeaderThree>{title}</HeaderThree>
           <Hr></Hr>
